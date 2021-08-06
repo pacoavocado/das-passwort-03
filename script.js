@@ -10,9 +10,9 @@ const charSet4 = ["1","2","3","4","5","6","7","8","9","0"];
 
 // prompt for password length
 let pwLength = prompt("enter password length (enter # between 8 and 128 characters)");
-let sureState1 = confirm("are you sure (y/n)")
+// let sureState1 = confirm("are you sure (y/n)")
 console.log(pwLength);
-console.log(sureState1);
+// console.log(sureState1);
 // prompt for capital letters
 let allowCaps = prompt("do you want to use capital letters (y/n)");
 let sureState2 = confirm("are you sure (y/n)")
@@ -22,70 +22,75 @@ console.log(sureState2);
 // prompt for special characters
 let allowSpecial = prompt("do you want to use special characters (y/n)");
 let sureState3 = confirm("are you sure (y/n)")
-console.log(chosenValues);
+console.log(allowSpecial);
 console.log(sureState3);
 // propt for numbers
 let allowNumbers = prompt("do you want to use numbers (y/n)");
-let sureState4 = confirm("are you sure (y/n)");
-console.log(chosenValues);
+let sureState4 = confirm("are you sure");
+console.log(allowNumbers);
 console.log(sureState4);
 // prompt for indecicive ppl
-let areUsure = ["Y","y","N","n"];
-let chosenValues = theChosenVals[];
-let userPWlength = thePWlength[];
+let areUsure = [true];
+let chosenValues = [];
+let userPWlength = [];
+let password = [];
 
 
+
+let randomNumber = Math.floor(Math.random()*chosenValues.length);
+
+console.log(chosenValues)
+
+  
 
 function generatePassword(){
   
+  if (pwLength <= 8 ){
   
-
-if (pwLength <= 8 ){
-  
-  alert("not enough characters");
-  
-}  
-else if (pwLength >= 128 ){
-  
-  alert("too many characters");
-  
-}  
-else {
-  userPWlength = pwLength
-}  
-
-if (allowCaps == "y"){
+    alert("not enough characters");
     
-  if (sureState2 == "y"){
+  }  
+  else if (pwLength >= 128 ){
     
-    chosenValues = [ ...chosenValues, ...charset2];
-      }
+    alert("too many characters");
+    
+  }  
   else {
-    return;  
-      }  
+    userPWlength = pwLength
+  }  
+  
+  if (allowCaps == "y"){
+      
+    if (sureState2 === areUsure){
+      
+      chosenValues = [ ...chosenValues, ...charset2];
+    }
+    else {
+      sureState2 = false;
+    }  
     
-}  
-
-if (allowSpecial == "y"){
-  if (sureState3){
+  }  
   
-  chosenValues = [ ...chosenValues, ...charSet3];
-}
-  else {
-    allowSpecial;
-  }
-}  
-
-if (allowNumbers == "y"){
-  if (sureState4){
-  chosenValues = [ ...chosenValues, ...charSet4]
-  }
-  else{
-
-  }
-}  
+  if (allowSpecial == "y"){
+    if (sureState3){
+      
+      chosenValues = [ ...chosenValues, ...charSet3];
+    }
+    else {
+      allowSpecial;
+    }
+  }  
   
+  if (allowNumbers == "y"){
+    if (sureState4){
+      chosenValues = [ ...chosenValues, ...charSet4]
+    }
+    else{
+      allowNumbers;
+    }
+  }   
   
+  console.log()
   
   // chosenValues = [ ...charSet1];
   // chosenValues = [ ...chosenValues, ...charSet2];
@@ -94,15 +99,11 @@ if (allowNumbers == "y"){
   // console.log(chosenValues)cd
   
 
-  
+ 
 
-// let randomNumber = Math.floor(Math.random()*chosenValues.userPWlength.length);
-
-let password = [];
-
-// chosenValues[randomNumber];
+chosenValues[randomNumber];
 password.push(chosenValues[randomNumber]);
-for (let i = 0; i < password.length; i++) {
+for (let i = 0; i < pwLength.length; i++) {
   password = password[i];
   
 }
@@ -111,7 +112,6 @@ password.join("");
 
 console.log(randomNumber);
 
-console.log(password)
 // console.log(chosenValues)
 return password;
 
