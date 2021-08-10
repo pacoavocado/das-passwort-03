@@ -36,21 +36,20 @@ let userPWlength = [];
 let password = [];
 
 
-
 let randomNumber = Math.floor(Math.random()*chosenValues.length);
 
 console.log(chosenValues)
 
-  
+
 
 function generatePassword(){
   
-  if (pwLength <= 8 ){
-  
+  if (pwLength.length <= 8 ){
+    
     alert("not enough characters");
     
   }  
-  else if (pwLength >= 128 ){
+  else if (pwLength.length >= 128 ){
     
     alert("too many characters");
     
@@ -60,7 +59,7 @@ function generatePassword(){
   }  
   
   if (allowCaps == "y"){
-      
+    
     if (sureState2 === areUsure){
       
       chosenValues = [ ...chosenValues, ...charset2];
@@ -91,6 +90,10 @@ function generatePassword(){
   }   
   
   console.log()
+  for (let i = 0; i < userPWlength.value, i++); {
+   Math.floor(Math.random() * chosenValues.length)
+  }
+  
   
   // chosenValues = [ ...charSet1];
   // chosenValues = [ ...chosenValues, ...charSet2];
@@ -98,17 +101,17 @@ function generatePassword(){
   // chosenValues = [ ...chosenValues, ...charSet4];
   // console.log(chosenValues)cd
   
-
+  
  
 
 chosenValues[randomNumber];
 password.push(chosenValues[randomNumber]);
-for (let i = 0; i < pwLength.length; i++) {
-  password = password[i];
-  
+for (let i = 0; i < userPWlength.length; i++) {
+  password = userPWlength[i];
+  password.join("");
 }
 
-password.join("");
+
 
 console.log(randomNumber);
 
