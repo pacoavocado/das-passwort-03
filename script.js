@@ -90,9 +90,9 @@ function generatePassword(){
   }   
   
   // console.log()
-  // for (let i = 0; i < userPWlength.value, i++); {
-  //  Math.floor(Math.random() * chosenValues.length)
-  // }
+  for (let i = 0; i < userPWlength.value, i++); {
+   Math.floor(Math.random() * chosenValues.length)
+  }
 
   
   // chosenValues = [ ...charSet1];
