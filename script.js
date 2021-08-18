@@ -3,10 +3,10 @@ let generateBtn = document.querySelector("#generate");
 
  
 // character set arrays
-const charSet1 = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-const charSet2 = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-const charSet3 = ["!","@","#","$","%","^","&","*","(",")","-","+","~",",","<",">","?",":",";",'"'];
-const charSet4 = ["1","2","3","4","5","6","7","8","9","0"];
+let chosenValues = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+let capLetters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+let spcChar = ["!","@","#","$","%","^","&","*","(",")","-","+","~",",","<",">","?",":",";",'"'];
+let regNumbers = ["1","2","3","4","5","6","7","8","9","0"];
 
 // prompt for password length
 let pwLength = prompt("enter password length (enter # between 8 and 128 characters)");
@@ -35,6 +35,9 @@ let chosenValues = [];
 let userPWlength = [];
 let password = [];
 
+chosenValues = [ ...chosenValues, ...capLetters];
+chosenValues = [ ...chosenValues, ...spcChar];
+chosenValues = [ ...chosenValues, ...regNumbers]
 
 let randomNumber = Math.floor(Math.random()*chosenValues.length);
 
@@ -60,9 +63,8 @@ function generatePassword(){
   
   if (allowCaps == "y"){
     
-    if (sureState2 === areUsure){
+    if (   === areUsure){
       
-      chosenValues = [ ...chosenValues, ...charset2];
     }
     else {
       sureState2 = false;
@@ -73,7 +75,6 @@ function generatePassword(){
   if (allowSpecial == "y"){
     if (sureState3){
       
-      chosenValues = [ ...chosenValues, ...charSet3];
     }
     else {
       allowSpecial;
@@ -82,23 +83,22 @@ function generatePassword(){
   
   if (allowNumbers == "y"){
     if (sureState4){
-      chosenValues = [ ...chosenValues, ...charSet4]
     }
     else{
       allowNumbers;
     }
   }   
   
-  console.log()
-  for (let i = 0; i < userPWlength.value, i++); {
-   Math.floor(Math.random() * chosenValues.length)
-  }
-  
+  // console.log()
+  // for (let i = 0; i < userPWlength.value, i++); {
+  //  Math.floor(Math.random() * chosenValues.length)
+  // }
+
   
   // chosenValues = [ ...charSet1];
-  // chosenValues = [ ...chosenValues, ...charSet2];
-  // chosenValues = [ ...chosenValues, ...charSet3];
-  // chosenValues = [ ...chosenValues, ...charSet4];
+  // chosenValues = [ ...chosenValues, ...capLetters];
+  // chosenValues = [ ...chosenValues, ...spcChar];
+  // chosenValues = [ ...chosenValues, ...regNumbers];
   // console.log(chosenValues)cd
   
   
